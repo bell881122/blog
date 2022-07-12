@@ -1,4 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { MdMail, } from "react-icons/md";
 import Card from "components/Card";
 import SectionTitle from "components/SectionTitle";
 import Divider from "components/Divider";
@@ -7,18 +10,36 @@ export default function Resume() {
   return (
     <div className="bg-gray-600">
       <div className="bg-gray-50 p-6 mx-auto max-w-4xl">
-
         <div className="flex-none md:flex">
+          <div className='h-36 w-36 mr-4'>
+            <img className='h-full w-full object-center' src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=456&q=80" alt="avatar" />
+          </div>
           <div>
             <h1 className="text-[40px]">Yu-hsin Chang</h1>
             <h2 className="text-[20px] font-bold">Yu-hsin Chang</h2>
-            <p className="mt-4">Front-end Developer</p>
+            <p className="mt-5">Front-end Developer</p>
           </div>
           <div className="md:ml-auto md:mt-auto">
-            <p>Taipei Taiwan.</p>
-            <p>bell881122@gmail.com</p>
-            <p>LinkedIn</p>
-            <p>Github</p>
+            <p className='flex my-1'>
+              <p className='my-auto mr-2'><FaMapMarkerAlt /></p>
+              <p>Taipei, Taiwan.</p>
+            </p>
+            <p className='flex my-1'>
+              <p className='my-auto mr-2'><MdMail /></p>
+              <p>bell881122@gmail.com</p>
+            </p>
+            <p className='flex my-1'>
+              <p className='my-auto mr-2'><BsLinkedin /></p>
+              <a href="https://www.linkedin.com/in/emi-chang/" target='_blank' rel="noreferrer">
+                <p className='underline decoration-1'>LinkedIn</p>
+              </a>
+            </p>
+            <p className='flex my-1'>
+              <p className='my-auto mr-2'><BsGithub /></p>
+              <a href="https://github.com/bell881122" target='_blank' rel="noreferrer">
+                <p className='underline decoration-1'>GitHub</p>
+              </a>
+            </p>
           </div>
         </div>
 
@@ -34,6 +55,16 @@ export default function Resume() {
             <p>到了土日寫開統治生有我時時界南親決！</p>
           </>}
         />
+
+        <Card
+          title="RLC 紅獅集團"
+          subTitle="香港紅獅集團有限公司"
+          imgUrl="https://images.unsplash.com/photo-1600562718259-5cae2c9d2235?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+          content={<>
+            <p>到了土日寫開統治生有我時時界南親決！</p>
+          </>}
+          reverse
+        />
         <Card
           title="Simple Life"
           subTitle="Side project"
@@ -41,7 +72,6 @@ export default function Resume() {
           content={<>
             <p>到了土日寫開統治生有我時時界南親決！</p>
           </>}
-          reverse
         />
 
         <Divider />
@@ -50,6 +80,7 @@ export default function Resume() {
         <Card
           title="立亨網絡"
           subTitle="2021.09 - present"
+          contentTitle="Front-end Dev"
           content={<>
             <p>地是民力國這：斷還速：工是得海笑有多工國久於質原體讀應力，亮不費能當全前這臉然安！商我印什樂過信興去全男少的了表分……考風個理，是老例輪界明好球或力新兒，見語事蘭這球公請意，現河同般具多，集世景人通營中自不告一原不在元意我想生會會可面但再在坐有術、巴預劇把立他可持低我書能賣生識又科，玩口於馬進洲底花心這、落與形想師內居造識戲是意落方日中電收沒愛一識，行人壓光提民細車人利得實並造物。要樣大她前來以我女慢領全轉冷標定果不集證人據受我當故覺印候麼新三。</p>
           </>}
@@ -57,6 +88,7 @@ export default function Resume() {
         <Card
           title="安鈦科技"
           subTitle="2019.08 - 2021.07"
+          contentTitle="Full-stack Dev"
           content={<>
             <p>{
               `人們不要放他看又總許太老組是創強相傳廣從爸寫美朋室研。
@@ -67,7 +99,7 @@ export default function Resume() {
         />
 
         <Divider />
-        
+
         <SectionTitle title="EDUCATION" />
         <Card
           title="國立臺灣科技大學"
