@@ -4,12 +4,28 @@ import matter from 'gray-matter';
 import md from 'markdown-it';
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync('posts');
-  const paths = files.map((fileName) => ({
-    params: {
-      slug: fileName.replace('.md', ''),
-    },
-  }));
+  const basePath = 'posts';
+  const paths = [];
+
+  const getPaths = (path) => {
+    const files = fs.readdirSync(path);
+    files.forEach((fileName) => {
+      if (fileName.endsWith(".md")) {
+        let slug = `${path.replace(/\//g, "_",)}_${fileName.replace('.md', '')}`
+
+        paths.push({
+          params: {
+            slug: slug.replace("posts_", ""),
+          },
+        })
+      } else {
+        getPaths(`${path}/${fileName}`)
+      }
+    })
+  }
+
+  getPaths(basePath);
+
   return {
     paths,
     fallback: false,
@@ -17,7 +33,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const fileName = fs.readFileSync(`posts/${slug}.md`, 'utf-8');
+  const fileName = fs.readFileSync(`posts/${slug.replace(/\_/g, "/",)}.md`, 'utf-8');
+
   const { data: frontmatter, content } = matter(fileName);
   return {
     props: {
