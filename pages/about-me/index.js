@@ -11,35 +11,37 @@ export default function Resume() {
     <div className="bg-gray-600">
       <div className="bg-gray-50 p-6 mx-auto max-w-4xl">
         <div className="flex-none md:flex">
-          <div className='h-36 w-36 mr-4'>
-            <img className='h-full w-full object-center' src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=456&q=80" alt="avatar" />
-          </div>
-          <div>
-            <h1 className="text-[40px]">Yu-hsin Chang</h1>
-            <h2 className="text-[20px] font-bold">Yu-hsin Chang</h2>
-            <p className="mt-5">Front-end Developer</p>
+          <div className="flex-none sm:flex">
+            <div className='h-36 w-36 mr-4'>
+              <img className='h-full w-full object-center' src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=456&q=80" alt="avatar" />
+            </div>
+            <div>
+              <h1 className="text-[40px]">Yu-hsin Chang</h1>
+              <h2 className="text-[20px] font-bold">Yu-hsin Chang</h2>
+              <p className="mt-5">Front-end Developer</p>
+            </div>
           </div>
           <div className="md:ml-auto md:mt-auto">
-            <p className='flex my-1'>
+            <div className='flex my-1'>
               <p className='my-auto mr-2'><FaMapMarkerAlt /></p>
               <p>Taipei, Taiwan.</p>
-            </p>
-            <p className='flex my-1'>
+            </div>
+            <div className='flex my-1'>
               <p className='my-auto mr-2'><MdMail /></p>
               <p>bell881122@gmail.com</p>
-            </p>
-            <p className='flex my-1'>
+            </div>
+            <div className='flex my-1'>
               <p className='my-auto mr-2'><BsLinkedin /></p>
               <a href="https://www.linkedin.com/in/emi-chang/" target='_blank' rel="noreferrer">
-                <p className='underline decoration-1'>LinkedIn</p>
+                <span className='underline decoration-1'>LinkedIn</span>
               </a>
-            </p>
-            <p className='flex my-1'>
+            </div>
+            <div className='flex my-1'>
               <p className='my-auto mr-2'><BsGithub /></p>
               <a href="https://github.com/bell881122" target='_blank' rel="noreferrer">
                 <p className='underline decoration-1'>GitHub</p>
               </a>
-            </p>
+            </div>
           </div>
         </div>
 
