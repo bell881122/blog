@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdMail, } from "react-icons/md";
 import Card from "components/Card";
 import SectionTitle from "components/SectionTitle";
 import Divider from "components/Divider";
+import Link from "components/Link";
 
 export default function Resume() {
   return (
@@ -12,8 +13,8 @@ export default function Resume() {
       <div className="bg-gray-50 p-6 mx-auto max-w-4xl">
         <div className="flex-none md:flex">
           <div className="flex-none sm:flex">
-            <div className='h-36 w-36 mr-4'>
-              <img className='h-full w-full object-center' src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=456&q=80" alt="avatar" />
+            <div className="h-36 w-36 mr-4">
+              <img className="h-full w-full object-center" src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=456&q=80" alt="avatar" />
             </div>
             <div>
               <h1 className="text-[40px]">Yu-hsin Chang</h1>
@@ -22,25 +23,27 @@ export default function Resume() {
             </div>
           </div>
           <div className="md:ml-auto md:mt-auto">
-            <div className='flex my-1'>
-              <p className='my-auto mr-2'><FaMapMarkerAlt /></p>
+            <div className="flex my-1">
+              <p className="my-auto mr-2"><FaMapMarkerAlt /></p>
               <p>Taipei, Taiwan.</p>
             </div>
-            <div className='flex my-1'>
-              <p className='my-auto mr-2'><MdMail /></p>
+            <div className="flex my-1">
+              <p className="my-auto mr-2"><MdMail /></p>
               <p>bell881122@gmail.com</p>
             </div>
-            <div className='flex my-1'>
-              <p className='my-auto mr-2'><BsLinkedin /></p>
-              <a href="https://www.linkedin.com/in/emi-chang/" target='_blank' rel="noreferrer">
-                <span className='underline decoration-1'>LinkedIn</span>
-              </a>
+            <div className="flex my-1">
+              <p className="my-auto mr-2"><BsLinkedin /></p>
+              <Link
+                txt="LinkedIn"
+                url="https://www.linkedin.com/in/emi-chang"
+              />
             </div>
-            <div className='flex my-1'>
-              <p className='my-auto mr-2'><BsGithub /></p>
-              <a href="https://github.com/bell881122" target='_blank' rel="noreferrer">
-                <p className='underline decoration-1'>GitHub</p>
-              </a>
+            <div className="flex my-1">
+              <p className="my-auto mr-2"><BsGithub /></p>
+              <Link
+                txt="GitHub"
+                url="https://github.com/bell881122"
+              />
             </div>
           </div>
         </div>
@@ -50,29 +53,132 @@ export default function Resume() {
         <SectionTitle title="PROJECT" />
         <Card
           title="MetaWall"
-          subTitle="Side project"
+          subTitle="Side project(Group)"
           imgUrl="https://images.unsplash.com/photo-1624398891401-1362e7a0d062?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+          contentTitle="區塊鏈社群概念網站"
           content={<>
-            <p>較對地皮班、鄉年難下員國能市經拉自李考自或未間公：人嗎兒人，到來病為引教次自難設視這公雨時利寫師……成只式出正是：住小須事己金！德他且可。</p>
-            <p>到了土日寫開統治生有我時時界南親決！</p>
+            <p><b>前端技術</b></p>
+            <p>React.js</p>
+            <p>Recoil</p>
+            <p>Next.js</p>
+            <p>Storybook</p>
+            <p>Axios</p>
+            <p>TailwindCSS</p>
+            <p><b>後端技術</b></p>
+            <p>Express.js</p>
+            <p>MongoDB/Mongoose</p>
+            <p>Imgur API</p>
+            <p>swagger</p>
+            <p>第三方支付（藍新金流）</p>
+            <p>WebSocket（聊天室）</p>
+            <p>JsonWebToken（註冊登入）</p>
+
+            <br />
+            <p>
+              <Link
+                txt="MetaWall"
+                url="https://metawall-dusky.vercel.app/"
+              />
+            </p>
+            <p>體驗帳密：</p>
+            <p>test@gmail.com</p>
+            <p>1234qwer</p>
+            <br />
+
+            <p>
+              <Link
+                txt="前端 Github"
+                url="https://github.com/ayugioh2003/metawall"
+              />
+            </p>
+            <p>
+              <Link
+                txt="後端 Github"
+                url="https://github.com/ayugioh2003/metawallBackend"
+              />
+            </p>
+            <p>
+              <Link
+                txt="共筆文件"
+                url="https://hackmd.io/@ayugioh2003/HyI-c-Gf9/%2FQH2BCKRVS5aCN9EFnUeGsw"
+              />
+            </p>
+            <p>
+              <Link
+                txt="簡報 PPT"
+                url="https://docs.google.com/presentation/d/16gBUbxeFbYuLoI1Pta_NekDQ22DGRXCV5SF_6RyiIII/edit#slide=id.g133c16ca88c_4_0"
+              />
+            </p>
           </>}
         />
 
         <Card
+          reverse
           title="RLC 紅獅集團"
           subTitle="香港紅獅集團有限公司"
           imgUrl="https://images.unsplash.com/photo-1600562718259-5cae2c9d2235?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
           content={<>
-            <p>到了土日寫開統治生有我時時界南親決！</p>
+            <p>國際投資交易平台</p>
+            <p>
+              <Link
+                txt="紅獅官網"
+                url="https://www.rlc900.com/"
+              />
+            </p>
+            <p>
+              <Link
+                txt="紅獅交易網"
+                url="https://m.rlc900.com/"
+              />
+            </p>
           </>}
-          reverse
         />
         <Card
           title="Simple Life"
           subTitle="Side project"
           imgUrl="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
+          contentTitle="二手好物交流網站"
           content={<>
-            <p>到了土日寫開統治生有我時時界南親決！</p>
+            <p>
+              <Link
+                txt="Simple Life"
+                url="https://www.simplelife.site/"
+              />
+            </p>
+            <p>幫助使用者重新找回和物品的關係，讓好物長壽、讓人生樂活。提供交流二手物品、討論斷捨離議題，協助使用者回頭檢視現今的生活方式，以打造自己的簡單幸福生活。未來計畫將朝物品共享、物資永續利用等，進行平台功能開發與優化。</p>
+            <p className="font-bold">Dependencies</p>
+            <p>
+              {`・React v17.0.1 (SPA)
+              ・Firebase v8.2.9
+              ・Material-UI (RWD)
+              ・Moment.js`}
+            </p>
+            <p>
+              <Link
+                txt="GitHub Link"
+                url="https://github.com/bell881122/SimpleLife"
+              />
+            </p>
+          </>}
+        />
+        <Card
+          reverse
+          title="我們的書櫃"
+          subTitle="Side project"
+          imgUrl="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+          contentTitle="分享書籍，共創閱讀體驗"
+          content={<>
+            <p>{
+              `想看書就得買書？
+              不買就只能預約圖書館，等到地老天荒？
+              我家翻過好幾遍的書你想看，
+              他家放在架子上積灰的畫冊我好想要。
+
+              讓我的書櫃變成你的書櫃，
+              我們一起分享好書，享受閱讀吧！
+              `
+            }</p>
+            <p className="mt-3 text-gray-400">coming soon...</p>
           </>}
         />
 
@@ -82,21 +188,59 @@ export default function Resume() {
         <Card
           title="立亨網絡"
           subTitle="2021.09 - present"
-          contentTitle="Front-end Dev"
+          contentTitle="Front-End Developer"
           content={<>
-            <p>地是民力國這：斷還速：工是得海笑有多工國久於質原體讀應力，亮不費能當全前這臉然安！商我印什樂過信興去全男少的了表分……考風個理，是老例輪界明好球或力新兒，見語事蘭這球公請意，現河同般具多，集世景人通營中自不告一原不在元意我想生會會可面但再在坐有術、巴預劇把立他可持低我書能賣生識又科，玩口於馬進洲底花心這、落與形想師內居造識戲是意落方日中電收沒愛一識，行人壓光提民細車人利得實並造物。要樣大她前來以我女慢領全轉冷標定果不集證人據受我當故覺印候麼新三。</p>
+            <p>{
+              `React（hook & component） + Redux
+               Develop, Maintain and Troubleshoot`
+            }</p>
           </>}
         />
         <Card
           title="安鈦科技"
           subTitle="2019.08 - 2021.07"
-          contentTitle="Full-stack Dev"
+          contentTitle="Full-stack Developer"
           content={<>
             <p>{
-              `人們不要放他看又總許太老組是創強相傳廣從爸寫美朋室研。
-              童再的期熱位麼我定風回達年車格說可動近正特，天轉不別持，傳下們，人關年四者變斯知性文是我；的然意能比，究我爭議致，定接客事最轉金，可上導造在票的。都大葉開格出生裡，及身好為下。
-              味國向得切房，下於質理得模眾房改，歷動生統持任，金這功山興樣上：票直卻高一些魚那的東子機人時選感格孩子故我輪為員化中。`
+              `◎高雄師範大學公文系統管理系統主要負責人
+              ・開發系統、維護介面、架設站台、建置維護資料庫
+              ・處理舊版系統資料轉至新系統
+              ・上線後每月完成 20+ 需求數
+              ・上線後兩個月內驗收完成，客戶評價滿意
+              ◎獨立開發、上線、維護教育部青年署HTML版公文系統
+              ・開發系統、維護介面、架設站台、建置維護資料庫
+              ・舊版本系統資料轉檔
+              ・參與客戶需求訪談，第一線了解客戶需求
+              ・上線後三個月內驗收完成，以利業務進行後續收款
+              ・專案自2020年7月上線至今穩定運作，每月回報維修數在 4 以下
+              ◎參與團隊開發、上線、維護台大醫院公文系統
+              （包含總院、新竹分院、竹東分院、生醫分院）
+              ・專案 2021 年 1 月上線後至今穩定運作
+              ・參與開發每月完成 30+ 需求數
+              ・協助維護並驗收完成
+              ・參與客戶需求訪談，第一線了解客戶需求
+              ・上線後每月協助完成 20+ 需求數
+              ◎協助維護多家組織公文系統
+              ・台灣自來水公司
+              ・世新大學
+              ・交通部觀光局
+              ・......`
             }</p>
+          </>}
+        />
+
+        <Card
+          title="Graphic Designer"
+          subTitle="2015.02 - 2019.03"
+          content={<>
+            <p className="font-bold">冰河森林數位科技</p>
+            <p>〈Barocco Nuts〉品牌網頁設計、維護</p>
+            <p>〈Playwoods〉品牌 EDM 企劃、設計排版</p>
+            <p className="font-bold mt-2">大風文創出版</p>
+            <p>大風／繪虹／愛手作書系文宣品設計</p>
+            <p className="font-bold mt-2">國立政治大學</p>
+            <p>《竹南鎮誌》封面設計、內頁插圖、圖表繪製</p>
+            <p>《台灣原住民族部落事典》設計風格、內頁版型規劃</p>
           </>}
         />
 
@@ -106,9 +250,10 @@ export default function Resume() {
         <Card
           title="國立臺灣科技大學"
           subTitle="Taipei, taiwan."
+          contentTitle="商業設計系"
           content={<>
-            <p>較對地皮班、鄉年難下員國能市經拉自李考自或未間公：人嗎兒人，到來病為引教次自難設視這公雨時利寫師……成只式出正是：住小須事己金！德他且可。</p>
-            <p>到了土日寫開統治生有我時時界南親決！</p>
+            <p>2010 年校園化妝競賽</p>
+            <p>2014 年設計系畢業成果展</p>
           </>}
         />
 
