@@ -50,6 +50,43 @@ export default function Resume() {
 
         <Divider />
 
+        <SectionTitle title="SKILL" />
+        <div className="flex-none sm:flex mt-3">
+          <div className='mb-6'>
+            <p className='font-bold text-[18px]'>Front-end</p>
+            <ul className='list-disc ml-5'>
+              <li>React (hook {`&`} component)</li>
+              <li>Redux</li>
+              <li>JavaScript {`(ES6+)`}</li>
+              <li>Next.js</li>
+              <li>webpack</li>
+            </ul>
+          </div>
+          <div className='mb-6 mx-0 sm:mx-5'>
+            <p className='font-bold text-[18px]'>Layout</p>
+            <ul className='list-disc ml-5'>
+              <li>Material-UI</li>
+              <li>Bootstrap</li>
+              <li>{`Sass(SCSS)`}</li>
+              <li>styled-components</li>
+            </ul>
+          </div>
+          <div className='mb-6'>
+            <p className='font-bold text-[18px]'>Back-End / Other</p>
+            <ul className='list-disc ml-5'>
+              <li>Node.js</li>
+              <li>RESTful APIs</li>
+              <li>MongoDB</li>
+              <li>Firebase</li>
+              <li>CI/CD(Drone, Vercel)</li>
+              <li>.Net(C#)</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+        </div>
+
+        <Divider />
+
         <SectionTitle title="PROJECT" />
         <Card
           title="MetaWall"
