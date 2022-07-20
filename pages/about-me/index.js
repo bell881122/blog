@@ -53,12 +53,15 @@ export default function Resume() {
         <SectionTitle title="SKILL" />
         <div className="flex-none sm:flex mt-3">
           <div className='mb-6'>
-            <p className='font-bold text-[18px]'>Front-end</p>
+            <p className='font-bold text-[18px]'>Front-end / JS</p>
             <ul className='list-disc ml-5'>
+              <li>JavaScript(ES6+)</li>
+              <li>TypeScript</li>
               <li>React (hook {`&`} component)</li>
               <li>Redux</li>
-              <li>JavaScript {`(ES6+)`}</li>
               <li>Next.js</li>
+              <li>Node.js</li>
+              <li>express.js</li>
               <li>webpack</li>
             </ul>
           </div>
@@ -67,17 +70,20 @@ export default function Resume() {
             <ul className='list-disc ml-5'>
               <li>Material-UI</li>
               <li>Bootstrap</li>
-              <li>{`Sass(SCSS)`}</li>
+              <li>TailwindCSS</li>
+              <li>Sass / SCSS</li>
               <li>styled-components</li>
+              <li>Storybook</li>
             </ul>
           </div>
           <div className='mb-6'>
             <p className='font-bold text-[18px]'>Back-End / Other</p>
             <ul className='list-disc ml-5'>
-              <li>Node.js</li>
-              <li>RESTful APIs</li>
+              <li>Git(GitHub / GitLab)</li>
+              <li>RESTful API</li>
               <li>MongoDB</li>
               <li>Firebase</li>
+              <li>Nginx</li>
               <li>CI/CD(Drone, Vercel)</li>
               <li>.Net(C#)</li>
               <li>SQL</li>
