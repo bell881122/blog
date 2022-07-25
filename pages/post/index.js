@@ -13,13 +13,17 @@ export async function getStaticProps() {
     files.forEach((fileName) => {
       if (fileName.endsWith(".md")) {
         const rootPath = path.startsWith("posts/") ? (path.replace("posts/", "")) : (path.replace("posts", ""))
+        const filePath = `${path}/${fileName}`;
         const slug = `${rootPath.replace(/\//g, "_",)}${rootPath ? "_" : ""}${fileName.replace('.md', '')}`;
-        const readFile = fs.readFileSync(`${path}/${fileName}`, 'utf-8');
+        const readFile = fs.readFileSync(filePath, 'utf-8');
+        let lastModified = fs.statSync(filePath).mtime;
+        lastModified = `${lastModified.getFullYear()}-${(lastModified.getMonth()+1).toString().padStart(2,'0')}-${lastModified.getDate().toString().padStart(2,'0')}`;
         const { data: frontmatter } = matter(readFile);
         if (!frontmatter.draft) // 草稿不顯示
           posts.push({
             slug,
             frontmatter,
+            lastModified,
           });
       } else {
         getPathPosts(`${path}/${fileName}`)
@@ -34,7 +38,7 @@ export async function getStaticProps() {
 export default function Post({ posts }) {
   return (
     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 p-4 md:p-0'>
-      {posts.map(({ slug, frontmatter }) => (
+      {posts.map(({ slug, frontmatter,lastModified }) => (
         <div
           key={slug}
           className='border border-gray-200 m-2 rounded-xl shadow-xl overflow-hidden flex flex-col'
@@ -50,9 +54,10 @@ export default function Post({ posts }) {
               <div className='p-4'>
                 <h1>{frontmatter.title}</h1>
                 <small>{frontmatter.date}</small>
+                <small className='text-gray-300'>{`（最後更新：${lastModified}）`}</small>
                 <div className='flex flex-wrap'>
-                  {frontmatter.tags.toString().split(',').map((tag,index) => (<>
-                    <small className={`text-gray-400 px-2 py-1 block mt-1.5 border rounded-[8px] ${index!==frontmatter.tags.length-1 ?"mr-1":''}`}>{tag}</small>
+                  {frontmatter.tags.toString().split(',').map((tag, index) => (<>
+                    <small className={`text-gray-400 px-2 py-1 block mt-1.5 border rounded-[8px] ${index !== frontmatter.tags.length - 1 ? "mr-1" : ''}`}>{tag}</small>
                   </>))}
                 </div>
               </div>
