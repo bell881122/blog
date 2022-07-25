@@ -1,7 +1,7 @@
 ---
-title: 'My first post 2'
-date: '2021-09-22'
-tags: 'myTag'
+title: 'Title'
+date: '2022-00-00'
+tags: 'tag'
 coverImage: ''
 draft: true
 ---

@@ -1,31 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import fs from 'fs';
-import matter from 'gray-matter';
 import md from 'markdown-it';
+import { recurseAllPaths, getMdFile } from 'utils/utils';
 
 export async function getStaticPaths() {
-  const basePath = 'posts/posts'
-  const paths = [];
-
-  const getPaths = (path) => {
-    const files = fs.readdirSync(path);
-    files.forEach((fileName) => {
-      if (fileName.endsWith(".md")) {
-        let slug = `${path.replace(/\//g, "_",)}_${fileName.replace('.md', '')}`
-
-        paths.push({
-          params: {
-            slug: slug.replace("posts_", ""),
-          },
-        })
-      } else {
-        getPaths(`${path}/${fileName}`)
-      }
-    })
-  }
-
-  getPaths(basePath);
-
+  const paths = recurseAllPaths(process.env.basePath, "getPostData").filter(path => path);
   return {
     paths,
     fallback: false,
@@ -33,9 +11,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const fileName = fs.readFileSync(`posts/${slug.replace(/\_/g, "/",)}.md`, 'utf-8');
-
-  const { data: frontmatter, content } = matter(fileName);
+  const filePath = `posts/${slug.replace(/\_/g, "/",)}.md`
+  const { data: frontmatter, content } = getMdFile(filePath);
   return {
     props: {
       frontmatter,
