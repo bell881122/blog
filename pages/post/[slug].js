@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import md from 'markdown-it';
 
 export async function getStaticPaths() {
-  const basePath = 'posts';
+  const basePath = 'posts/posts'
   const paths = [];
 
   const getPaths = (path) => {

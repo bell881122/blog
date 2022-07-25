@@ -5,7 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 
 export async function getStaticProps() {
-  const basePath = 'posts'
+  const basePath = 'posts/posts'
   const posts = [];
 
   const getPathPosts = (path) => {
