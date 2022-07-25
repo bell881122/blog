@@ -45,11 +45,16 @@ export default function Post({ posts }) {
                 width={650}
                 height={340}
                 alt={frontmatter.title}
-                src={frontmatter.coverImage}
+                src={frontmatter.coverImage || "https://images.unsplash.com/photo-1657477612554-ff8f28dd15e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"}
               />
               <div className='p-4'>
                 <h1>{frontmatter.title}</h1>
                 <small>{frontmatter.date}</small>
+                <div className='flex flex-wrap'>
+                  {frontmatter.tags.toString().split(',').map((tag,index) => (<>
+                    <small className={`text-gray-400 px-2 py-1 block mt-1.5 border rounded-[8px] ${index!==frontmatter.tags.length-1 ?"mr-1":''}`}>{tag}</small>
+                  </>))}
+                </div>
               </div>
 
             </a>
