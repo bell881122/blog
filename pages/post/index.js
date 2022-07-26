@@ -10,7 +10,7 @@ export async function getStaticProps() {
 
 export default function Post({ posts }) {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 p-4 md:p-0'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 md:p-0 max-w-[1200px] mx-auto'>
       {posts.length > 0 && posts.filter((post) => post && post.slug).map(({ slug, frontmatter, lastModified }) => {
         return (
           <div
@@ -20,7 +20,7 @@ export default function Post({ posts }) {
             <Link href={`post/${slug}`}>
               <a>
                 <div
-                  className='w-full h-[300px]'
+                  className='w-full h-[250px] sm:h-[180px] md:h-[150px] lg:h-[100px]'
                   style={{
                     background: `url(${frontmatter.coverImage}) center center`,
                     backgroundSize: 'cover'
@@ -36,7 +36,6 @@ export default function Post({ posts }) {
                     ))}
                   </div>
                 </div>
-
               </a>
             </Link>
           </div>
