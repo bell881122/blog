@@ -23,17 +23,20 @@ export async function getStaticProps({ params: { slug } }) {
 
 export default function PostPage({ frontmatter, content }) {
   return (
-    <>
-      <img
-        width="100%"
-        height={200}
-        alt={frontmatter.title}
-        src={frontmatter.coverImage}
+    <div className=''>
+      <div
+        className='w-full h-[400px]'
+        style={{
+          background: `url(${frontmatter.coverImage}) center center`,
+          backgroundSize: 'cover'
+        }}
       />
-      <div className='prose m-4'>
-        <h1>{frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+      <div className="max-w-[1000px] mx-auto">
+        <div className='prose py-10 px-8 max-w-full shadow-2xl'>
+          <h1>{frontmatter.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
