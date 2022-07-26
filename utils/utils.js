@@ -11,7 +11,7 @@ export function recurseAllPaths(path, type = "getPostList") {
       else {
         return getMdFilePath(path, file)
       }
-    } else if (file.isDirectory()) {
+    } else if (file.isDirectory() && file.name!=="draft") {
       return recurseAllPaths(`${path}/${file.name}`, type)
     }
     else {
